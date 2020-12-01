@@ -10,6 +10,6 @@ namespace PimaDoctor.Views.Interfaces
     {
         public Func<string,string,bool> CheckCredentials { get; set; }
         public Func<string,string> GetRole { get; set; }
-        public Action<string> Login { get; set; }
+        public Action Login { get; set; }
     }
 }

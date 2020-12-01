@@ -16,6 +16,7 @@ namespace PimaDoctor
         public MainWindow()
         {
             InitializeComponent();
+            ChangeWindow(new LoginView());
         }
         private void ChangeWindow(AbstractChangingWindow window)
         {
