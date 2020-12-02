@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PimaDoctor.Neural;
 
 namespace PimaDoctor
 {
@@ -17,6 +18,8 @@ namespace PimaDoctor
         {
             InitializeComponent();
             ChangeWindow(new LoginView());
+            Network.InitNetwork();
+            Network.LoadNetwork();
         }
         private void ChangeWindow(AbstractChangingWindow window)
         {

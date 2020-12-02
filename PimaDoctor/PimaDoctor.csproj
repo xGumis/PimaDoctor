@@ -14,9 +14,10 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -27,7 +28,7 @@
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -36,13 +37,63 @@
     <WarningLevel>4</WarningLevel>
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>8.0</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>8.0</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Alea, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ba52afc3c2e933d6">
+      <HintPath>..\packages\Alea.3.0.4\lib\net45\Alea.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Alea.IL, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ba52afc3c2e933d6">
+      <HintPath>..\packages\Alea.3.0.4\lib\net45\Alea.IL.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Alea.Parallel, Version=3.0.0.0, Culture=neutral, PublicKeyToken=ba52afc3c2e933d6">
+      <HintPath>..\packages\Alea.3.0.4\lib\net45\Alea.Parallel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CsvHelper, Version=17.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823">
+      <HintPath>..\packages\CsvHelper.17.0.1\lib\net47\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FSharp.Core, Version=4.4.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\FSharp.Core.4.2.3\lib\net45\FSharp.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604">
       <HintPath>..\packages\Google.Protobuf.3.11.4\lib\net45\Google.Protobuf.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.0.7.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <HintPath>..\packages\SharpZipLib.NETStandard.1.0.7\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JetBrains.Annotations, Version=2018.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325">
+      <HintPath>..\packages\JetBrains.Annotations.2018.2.1\lib\net20\JetBrains.Annotations.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d">
@@ -57,8 +108,19 @@
       <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Keras, Version=3.7.4.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Keras.NET.3.7.4.4\lib\netstandard2.0\Keras.dll</HintPath>
+    </Reference>
     <Reference Include="linq2db, Version=3.1.6.0, Culture=neutral, PublicKeyToken=e41013125f9e410a">
       <HintPath>..\packages\linq2db.3.1.6\lib\net46\linq2db.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Registry, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.Win32.Registry.4.7.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="mscorlib" />
@@ -66,12 +128,30 @@
       <HintPath>..\packages\MySql.Data.8.0.22\lib\net48\MySql.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Numpy.Bare, Version=3.7.1.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Numpy.Bare.3.7.1.25\lib\netstandard2.0\Numpy.Bare.dll</HintPath>
+    </Reference>
+    <Reference Include="NumSharp.Core, Version=0.20.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\NumSharp.0.20.5\lib\netstandard2.0\NumSharp.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb">
       <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Python.Runtime, Version=2.5.1.0, Culture=neutral, processorArchitecture=AMD64">
+      <HintPath>..\packages\pythonnet_netstandard_py37_win.2.5.1\lib\netstandard2.0\Python.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106">
       <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13">
+      <HintPath>..\packages\SixLabors.ImageSharp.1.0.0\lib\net472\SixLabors.ImageSharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -90,12 +170,24 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Numerics" />
-    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.AccessControl, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Security.AccessControl.4.7.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.7.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Transactions" />
@@ -120,28 +212,40 @@
   <ItemGroup>
     <Compile Include="Controllers\Controllers\RoleController.cs" />
     <Compile Include="Controllers\Controllers\UserController.cs" />
-    <Compile Include="MainWindow.cs" />
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DbCinema.cs" />
+    <Compile Include="Models\Diabetes.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Neural\Network.cs" />
+    <Compile Include="Neural\PythonExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\AbstractControlDescriptionProvider.cs" />
     <Compile Include="Utilities\Cache.cs" />
+    <Compile Include="Utilities\PasswordCipher.cs" />
     <Compile Include="ViewModels\AddUserViewModel.cs" />
     <Compile Include="ViewModels\ClassifyViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\TrainViewModel.cs" />
-    <Compile Include="Views\AbstractChangingWindow.cs" />
-    <Compile Include="Views\AddUserView.cs" />
+    <Compile Include="Views\AbstractChangingWindow.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\AddUserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\AddUserView.Designer.cs">
       <DependentUpon>AddUserView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ClassifyView.cs" />
+    <Compile Include="Views\ClassifyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\ClassifyView.Designer.cs">
       <DependentUpon>ClassifyView.cs</DependentUpon>
     </Compile>
@@ -150,15 +254,21 @@
     <Compile Include="Views\Interfaces\ILoginView.cs" />
     <Compile Include="Views\Interfaces\IMenu.cs" />
     <Compile Include="Views\Interfaces\ITrainView.cs" />
-    <Compile Include="Views\LoginView.cs" />
+    <Compile Include="Views\LoginView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\LoginView.Designer.cs">
       <DependentUpon>LoginView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MenuView.cs" />
+    <Compile Include="Views\MenuView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\MenuView.Designer.cs">
       <DependentUpon>MenuView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\TrainView.cs" />
+    <Compile Include="Views\TrainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Views\TrainView.Designer.cs">
       <DependentUpon>TrainView.cs</DependentUpon>
     </Compile>
@@ -189,6 +299,7 @@
     <EmbeddedResource Include="Views\TrainView.resx">
       <DependentUpon>TrainView.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -205,11 +316,22 @@
   <ItemGroup>
     <Folder Include="Tests\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Datasets\diabetes.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Datasets\test.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Neural\numpy_interop.py" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\Alea.3.0.4\build\Alea.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Alea.3.0.4\build\Alea.targets'))" />
   </Target>
+  <Import Project="..\packages\Alea.3.0.4\build\Alea.targets" Condition="Exists('..\packages\Alea.3.0.4\build\Alea.targets')" />
 </Project>
