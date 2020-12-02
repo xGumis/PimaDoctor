@@ -64,6 +64,18 @@
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\TrainViewModel.cs" />
     <Compile Include="Views\AbstractChangingWindow.cs" />
+    <Compile Include="Views\AddUserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\AddUserView.Designer.cs">
+      <DependentUpon>AddUserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClassifyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ClassifyView.Designer.cs">
+      <DependentUpon>ClassifyView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Interfaces\IAddUserView.cs" />
     <Compile Include="Views\Interfaces\IClassifyView.cs" />
     <Compile Include="Views\Interfaces\ILoginView.cs" />
@@ -74,6 +86,18 @@
     </Compile>
     <Compile Include="Views\LoginView.Designer.cs">
       <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MenuView.Designer.cs">
+      <DependentUpon>MenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TrainView.Designer.cs">
+      <DependentUpon>TrainView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
@@ -87,8 +111,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\AddUserView.resx">
+      <DependentUpon>AddUserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ClassifyView.resx">
+      <DependentUpon>ClassifyView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MenuView.resx">
+      <DependentUpon>MenuView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TrainView.resx">
+      <DependentUpon>TrainView.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

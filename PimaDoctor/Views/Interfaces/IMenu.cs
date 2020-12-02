@@ -12,5 +12,6 @@ namespace PimaDoctor.Views.Interfaces
         public Action GoToTrain { get; set; }
         public Action GoToClassify { get; set; }
         public Action GoToUserAdd { get; set; }
+        public Func<string> GetRole { get; set; }
     }
 }

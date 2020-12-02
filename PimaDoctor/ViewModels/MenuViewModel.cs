@@ -15,6 +15,12 @@ namespace PimaDoctor.ViewModels
             view.GoToClassify += GoToClassify;
             view.GoToTrain += GoToTrain;
             view.GoToUserAdd += GoToUserAdd;
+            view.GetRole += GetRole;
+        }
+
+        private string GetRole()
+        {
+            throw new NotImplementedException();
         }
 
         private void GoToUserAdd()

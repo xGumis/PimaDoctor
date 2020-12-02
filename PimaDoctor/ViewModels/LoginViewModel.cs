@@ -16,7 +16,7 @@ namespace PimaDoctor.ViewModels
             view.Login += Login;
         }
 
-        private void Login()
+        private void Login(string username, string role)
         {
             throw new NotImplementedException();
         }

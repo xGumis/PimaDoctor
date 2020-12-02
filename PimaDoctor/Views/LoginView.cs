@@ -33,6 +33,7 @@ namespace PimaDoctor.Views
             {
                 var role = GetRole(login);
                 Login(login,role);
+                Change_Window(new MenuView());
             }
             else MessageBox.Show("Nieprawidłowe dane logowania.");
         }

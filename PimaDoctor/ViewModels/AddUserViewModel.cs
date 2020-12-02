@@ -13,6 +13,12 @@ namespace PimaDoctor.ViewModels
         {
             view.GoBackToMenu += Back;
             view.AddUser += AddUser;
+            view.GetRoles += GetRoles;
+        }
+
+        private string[] GetRoles()
+        {
+            throw new NotImplementedException();
         }
 
         private bool AddUser(string username, string password, string role)
