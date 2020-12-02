@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PimaDoctor.Views.Interfaces;
+using PimaDoctor.ViewModels;
 
 namespace PimaDoctor.Views
 {
@@ -16,11 +17,13 @@ namespace PimaDoctor.Views
         public LoginView()
         {
             InitializeComponent();
+            viewModel = new LoginViewModel(this);
         }
 
+        private LoginViewModel viewModel;
         public Func<string, string, bool> CheckCredentials { get; set; }
         public Func<string, string> GetRole { get; set; }
-        public Action Login { get; set; }
+        public Action<string,string> Login { get; set; }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
@@ -29,7 +32,7 @@ namespace PimaDoctor.Views
             if (CheckCredentials(login, pass))
             {
                 var role = GetRole(login);
-                Login();
+                Login(login,role);
             }
             else MessageBox.Show("Nieprawidłowe dane logowania.");
         }

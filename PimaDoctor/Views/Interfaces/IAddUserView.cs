@@ -8,7 +8,7 @@ namespace PimaDoctor.Views.Interfaces
 {
     interface IAddUserView
     {
-        public Func<string,string,string,bool> AdUser { get; set; }
-        public Action<string> GoBackToMenu { get; set; }
+        public Func<string,string,string,bool> AddUser { get; set; }
+        public Action GoBackToMenu { get; set; }
     }
 }

@@ -9,6 +9,6 @@ namespace PimaDoctor.Views.Interfaces
     interface ITrainView
     {
         public Func<bool> RetrainNetwork { get; set; }
-        public Action<string> GetBackToMenu { get; set; }
+        public Action GetBackToMenu { get; set; }
     }
 }

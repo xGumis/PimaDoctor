@@ -58,6 +58,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\AbstractControlDescriptionProvider.cs" />
     <Compile Include="Utilities\Cache.cs" />
+    <Compile Include="ViewModels\AddUserViewModel.cs" />
+    <Compile Include="ViewModels\ClassifyViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\TrainViewModel.cs" />
     <Compile Include="Views\AbstractChangingWindow.cs" />
     <Compile Include="Views\Interfaces\IAddUserView.cs" />
     <Compile Include="Views\Interfaces\IClassifyView.cs" />
@@ -98,8 +103,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
