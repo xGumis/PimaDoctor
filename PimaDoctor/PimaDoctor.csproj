@@ -24,7 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-	<LangVersion>8.0</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,7 +34,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-	<LangVersion>8.0</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
@@ -120,9 +120,7 @@
   <ItemGroup>
     <Compile Include="Controllers\Controllers\RoleController.cs" />
     <Compile Include="Controllers\Controllers\UserController.cs" />
-	<Compile Include="MainWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MainWindow.cs" />
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
@@ -139,15 +137,11 @@
     <Compile Include="ViewModels\MenuViewModel.cs" />
     <Compile Include="ViewModels\TrainViewModel.cs" />
     <Compile Include="Views\AbstractChangingWindow.cs" />
-    <Compile Include="Views\AddUserView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Views\AddUserView.cs" />
     <Compile Include="Views\AddUserView.Designer.cs">
       <DependentUpon>AddUserView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ClassifyView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Views\ClassifyView.cs" />
     <Compile Include="Views\ClassifyView.Designer.cs">
       <DependentUpon>ClassifyView.cs</DependentUpon>
     </Compile>
@@ -156,21 +150,15 @@
     <Compile Include="Views\Interfaces\ILoginView.cs" />
     <Compile Include="Views\Interfaces\IMenu.cs" />
     <Compile Include="Views\Interfaces\ITrainView.cs" />
-    <Compile Include="Views\LoginView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Views\LoginView.cs" />
     <Compile Include="Views\LoginView.Designer.cs">
       <DependentUpon>LoginView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MenuView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Views\MenuView.cs" />
     <Compile Include="Views\MenuView.Designer.cs">
       <DependentUpon>MenuView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\TrainView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="Views\TrainView.cs" />
     <Compile Include="Views\TrainView.Designer.cs">
       <DependentUpon>TrainView.cs</DependentUpon>
     </Compile>
@@ -215,7 +203,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Tests" />
+    <Folder Include="Tests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
