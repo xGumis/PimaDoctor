@@ -120,20 +120,63 @@
   <ItemGroup>
     <Compile Include="Controllers\Controllers\RoleController.cs" />
     <Compile Include="Controllers\Controllers\UserController.cs" />
-    <Compile Include="Form1.cs">
+	<Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\DbCinema.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utilities\PasswordCipher.cs" />
-    <Compile Include="Validators\RoleValidator.cs" />
-    <Compile Include="Validators\UserValidator.cs" />
+    <Compile Include="Utilities\AbstractControlDescriptionProvider.cs" />
+    <Compile Include="Utilities\Cache.cs" />
+    <Compile Include="ViewModels\AddUserViewModel.cs" />
+    <Compile Include="ViewModels\ClassifyViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\MenuViewModel.cs" />
+    <Compile Include="ViewModels\TrainViewModel.cs" />
+    <Compile Include="Views\AbstractChangingWindow.cs" />
+    <Compile Include="Views\AddUserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\AddUserView.Designer.cs">
+      <DependentUpon>AddUserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ClassifyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\ClassifyView.Designer.cs">
+      <DependentUpon>ClassifyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Interfaces\IAddUserView.cs" />
+    <Compile Include="Views\Interfaces\IClassifyView.cs" />
+    <Compile Include="Views\Interfaces\ILoginView.cs" />
+    <Compile Include="Views\Interfaces\IMenu.cs" />
+    <Compile Include="Views\Interfaces\ITrainView.cs" />
+    <Compile Include="Views\LoginView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\LoginView.Designer.cs">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MenuView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\MenuView.Designer.cs">
+      <DependentUpon>MenuView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TrainView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\TrainView.Designer.cs">
+      <DependentUpon>TrainView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -143,7 +186,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="packages.config" />
+    <EmbeddedResource Include="Views\AddUserView.resx">
+      <DependentUpon>AddUserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ClassifyView.resx">
+      <DependentUpon>ClassifyView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginView.resx">
+      <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MenuView.resx">
+      <DependentUpon>MenuView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\TrainView.resx">
+      <DependentUpon>TrainView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
