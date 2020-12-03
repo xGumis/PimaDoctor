@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+using LinqToDB.Tools;
+using PimaDoctor.Models;
 using PimaDoctor.Neural;
 
 namespace PimaDoctor
@@ -18,8 +21,23 @@ namespace PimaDoctor
         {
             InitializeComponent();
             ChangeWindow(new LoginView());
-            Network.InitNetwork();
-            Network.LoadNetwork();
+            Network.TrainNetwork();
+            /*
+             * TODO: remove, example of usage
+             */
+            // Network.TrainNetwork();
+            // Network.LoadModel();
+            // Diabetes test = new Diabetes();
+            // test.Pregnancies = 6;
+            // test.Glucose = 148;
+            // test.BloodPressure = 72;
+            // test.SkinThickness = 35;
+            // test.Insulin = 0;
+            // test.BMI = 33.6;
+            // test.DiabetesPedigreeFunction = 0.627;
+            // test.Age = 50;
+            // var prediction = Network.Predict(test);
+            // MessageBox.Show(prediction.ToString());
         }
         private void ChangeWindow(AbstractChangingWindow window)
         {
