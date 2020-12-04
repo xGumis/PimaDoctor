@@ -4,7 +4,7 @@ using System.Linq;
 using LinqToDB;
 using PimaDoctor.Models;
 
-namespace PimaDoctor.Controllers.Controllers
+namespace PimaDoctor.Controllers
 {
     public static class RoleController
     {

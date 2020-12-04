@@ -4,7 +4,7 @@ using LinqToDB;
 using PimaDoctor.Models;
 using PimaDoctor.Utilities;
 
-namespace PimaDoctor.Controllers.Controllers
+namespace PimaDoctor.Controllers
 {
     public static class UserController
     {
