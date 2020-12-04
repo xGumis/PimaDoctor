@@ -10,8 +10,7 @@
     "timeout-ms": 10000,
     "project-file": "PimaDoctor.csproj",
     "solution-path": "../PimaDoctor.sln",
-    "max-concurrent-test-runners": 4,
-    "mutation-level": "Basic",
+    "mutation-level": "Standard",
     "threshold-high": 80,
     "threshold-low": 70,
     "threshold-break": 60,
@@ -21,7 +20,12 @@
       "*HashCode*"
     ],
     "mutate": [
-      "!**/*PythonExtensions.cs"
+      "!**/*PythonExtensions.cs",
+      "!**/*AbstractControlDescriptionProvider.cs",
+      "!**/*Views/*.cs"
+    ],
+    "test-projects": [
+      "Tests.csproj"
     ]
   }
 }

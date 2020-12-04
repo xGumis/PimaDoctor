@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using PimaDoctor.Controllers.Controllers;
+using PimaDoctor.Controllers;
 using PimaDoctor.Models;
 
 namespace PimaDoctor.Validators
@@ -48,10 +48,6 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                if (name == null || GetRoleByName(name).Name != null)
-                {
-                    return false;
-                }
                 RoleController.Add(name);
                 return true;
             }

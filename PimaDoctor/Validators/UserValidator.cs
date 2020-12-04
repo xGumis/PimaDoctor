@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using PimaDoctor.Controllers.Controllers;
+using PimaDoctor.Controllers;
 using PimaDoctor.Models;
 
 namespace PimaDoctor.Validators
@@ -48,10 +48,6 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                if (login == null || password == null || GetUserByLogin(login).Login != null)
-                {
-                    return false;
-                }
                 UserController.Add(login, password, roleId);
                 return true;
             }
