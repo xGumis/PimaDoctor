@@ -12,23 +12,17 @@ namespace PimaDoctor.ViewModels
         public LoginViewModel(ILoginView view)
         {
             view.CheckCredentials += CheckCredentials;
-            view.GetRole += GetRole;
             view.Login += Login;
         }
 
-        private void Login(string username, string role)
+        private void Login(string username)
         {
-            throw new NotImplementedException();
-        }
-
-        private string GetRole(string username)
-        {
-            throw new NotImplementedException();
+            Utilities.Cache.User = Validators.UserValidator.GetUserByLogin(username);
         }
 
         private bool CheckCredentials(string username, string password)
         {
-            throw new NotImplementedException();
+            return Validators.UserValidator.UserLoginValidation(username, password);
         }
     }
 }

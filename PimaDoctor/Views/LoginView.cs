@@ -22,8 +22,7 @@ namespace PimaDoctor.Views
 
         private LoginViewModel viewModel;
         public Func<string, string, bool> CheckCredentials { get; set; }
-        public Func<string, string> GetRole { get; set; }
-        public Action<string,string> Login { get; set; }
+        public Action<string> Login { get; set; }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
@@ -31,8 +30,7 @@ namespace PimaDoctor.Views
             var pass = textBoxPassword.Text;
             if (CheckCredentials(login, pass))
             {
-                var role = GetRole(login);
-                Login(login,role);
+                Login(login);
                 Change_Window(new MenuView());
             }
             else MessageBox.Show("Nieprawidłowe dane logowania.");

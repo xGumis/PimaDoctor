@@ -131,6 +131,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\AbstractControlDescriptionProvider.cs" />
     <Compile Include="Utilities\Cache.cs" />
+    <Compile Include="Utilities\PasswordCipher.cs" />
+    <Compile Include="Validators\RoleValidator.cs" />
+    <Compile Include="Validators\UserValidator.cs" />
     <Compile Include="ViewModels\AddUserViewModel.cs" />
     <Compile Include="ViewModels\ClassifyViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />

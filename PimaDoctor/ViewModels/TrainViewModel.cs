@@ -11,7 +11,6 @@ namespace PimaDoctor.ViewModels
     {
         public TrainViewModel(ITrainView view)
         {
-            view.GetBackToMenu += Back;
             view.RetrainNetwork += RetrainNetwork;
         }
 
@@ -20,9 +19,5 @@ namespace PimaDoctor.ViewModels
             throw new NotImplementedException();
         }
 
-        private void Back()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -23,7 +23,6 @@ namespace PimaDoctor.Views
         private TrainViewModel viewModel;
 
         public Func<bool> RetrainNetwork { get; set; }
-        public Action GetBackToMenu { get; set; }
 
         private void buttonTrain_Click(object sender, EventArgs e)
         {
@@ -37,7 +36,6 @@ namespace PimaDoctor.Views
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            GetBackToMenu();
             Change_Window(new MenuView());
         }
     }

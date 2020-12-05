@@ -24,7 +24,6 @@ namespace PimaDoctor.Views
 
         private AddUserViewModel viewModel;
         public Func<string, string, string, bool> AddUser { get; set; }
-        public Action GoBackToMenu { get; set; }
         public Func<string[]> GetRoles { get; set; }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -43,7 +42,6 @@ namespace PimaDoctor.Views
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            GoBackToMenu();
             Change_Window(new MenuView());
         }
     }
