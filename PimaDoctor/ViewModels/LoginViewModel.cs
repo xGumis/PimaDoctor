@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PimaDoctor.Validators;
 
 namespace PimaDoctor.ViewModels
 {
@@ -17,12 +18,12 @@ namespace PimaDoctor.ViewModels
 
         private void Login(string username)
         {
-            Utilities.Cache.User = Validators.UserValidator.GetUserByLogin(username);
+            Utilities.Cache.User = new UserValidator().GetUserByLogin(username);
         }
 
         private bool CheckCredentials(string username, string password)
         {
-            return Validators.UserValidator.UserLoginValidation(username, password);
+            return new UserValidator().UserLoginValidation(username, password);
         }
     }
 }
