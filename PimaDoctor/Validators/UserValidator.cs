@@ -1,18 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using PimaDoctor.Controllers.Controllers;
+using PimaDoctor.Controllers;
 using PimaDoctor.Models;
 
 namespace PimaDoctor.Validators
 {
-    public static class UserValidator
+    public class UserValidator
     {
+        private readonly bool _test;
+        public UserValidator(bool test = false)
+        {
+            _test = test;
+        }
 
-        public static List<User> GetAllUsers()
+        public List<User> GetAllUsers()
         {
             try
             {
-                return UserController.All();
+                return new UserController(_test).All();
             }
             catch (Exception e)
             {
@@ -20,11 +25,11 @@ namespace PimaDoctor.Validators
             }
         }
 
-        public static User GetUserById(int id)
+        public User GetUserById(int id)
         {
             try
             {
-                return UserController.Get(id);
+                return new UserController(_test).Get(id);
             }
             catch (Exception e)
             {
@@ -32,11 +37,11 @@ namespace PimaDoctor.Validators
             }
         }
 
-        public static User GetUserByLogin(string login)
+        public User GetUserByLogin(string login)
         {
             try
             {
-                return UserController.GetByLogin(login);
+                return new UserController(_test).GetByLogin(login);
             }
             catch (Exception e)
             {
@@ -44,15 +49,12 @@ namespace PimaDoctor.Validators
             }
         }
 
-        public static bool UserAddValidation(string login, string password, int roleId = 3)
+        public bool UserAddValidation(string login, string password, int roleId = 3)
         {
             try
             {
-                if (login == null || password == null || GetUserByLogin(login).Login != null)
-                {
-                    return false;
-                }
-                UserController.Add(login, password, roleId);
+                new RoleController(_test).Get(roleId);
+                new UserController(_test).Add(login, password, roleId);
                 return true;
             }
             catch (Exception e)
@@ -61,11 +63,12 @@ namespace PimaDoctor.Validators
             }
         }
 
-        public static bool UserUpdateValidation(int id, string password, int roleId)
+        public bool UserUpdateValidation(int id, string? password, int roleId)
         {
             try
             {
-                UserController.Update(id, password, roleId);
+                new RoleController(_test).Get(roleId);
+                new UserController(_test).Update(id, password, roleId);
                 return true;
             }
             catch (Exception e)
@@ -74,11 +77,12 @@ namespace PimaDoctor.Validators
             }
         }
 
-        public static bool UserDeleteValidation(int id)
+        public bool UserDeleteValidation(int id)
         {
             try
             {
-                UserController.Delete(id);
+                new UserController(_test).Get(id);
+                new UserController(_test).Delete(id);
                 return true;
             }
             catch (Exception e)
@@ -87,11 +91,11 @@ namespace PimaDoctor.Validators
             }
         }
 
-        public static bool UserLoginValidation(string login, string password)
+        public bool UserLoginValidation(string login, string password)
         {
             try
             {
-                return UserController.Login(login, password);
+                return new UserController(_test).Login(login, password);
             }
             catch (Exception e)
             {
