@@ -39,6 +39,7 @@ namespace Tests.Controllers
             var afterUpdateUser = UserController.GetByLogin("updateUserTest");
             afterUpdateUser.Should().BeOfType<User>();
             afterUpdateUser.Password.Should().NotBe(beforeUpdateUser.Password);
+            UserController.Delete(beforeUpdateUser.Id);
         }
     }
 }
