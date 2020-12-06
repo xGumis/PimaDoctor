@@ -45,8 +45,8 @@ namespace PimaDoctor.Controllers
         /*
          * Default role is user
          * 1 - admin
-         * 2 - employee
-         * 3 - user
+         * 2 - doctor
+         * 3 - patient
          */
         public static void Add(string login, string password, int roleId = 3)
         {

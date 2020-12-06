@@ -10,10 +10,11 @@
     "timeout-ms": 10000,
     "project-file": "PimaDoctor.csproj",
     "solution-path": "../PimaDoctor.sln",
-    "mutation-level": "Standard",
+    "mutation-level": "Basic",
     "threshold-high": 80,
     "threshold-low": 70,
     "threshold-break": 60,
+    "test-runner": "dotnettest",
     "ignore-methods": [
       "*Log*",
       "ToString",
@@ -25,7 +26,7 @@
       "!**/*Views/*.cs"
     ],
     "test-projects": [
-      "Tests.csproj"
+      "XUnitTestProject1.csproj"
     ]
   }
 }

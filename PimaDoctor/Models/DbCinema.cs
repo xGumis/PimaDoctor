@@ -1,4 +1,5 @@
 ﻿using LinqToDB;
+using LinqToDB.Data;
 
 namespace PimaDoctor.Models
 {

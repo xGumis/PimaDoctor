@@ -12,7 +12,7 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                return RoleController.All();
+                return new RoleController().All();
             }
             catch (Exception e)
             {
@@ -24,7 +24,7 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                return RoleController.Get(id);
+                return new RoleController().Get(id);
             }
             catch (Exception e)
             {
@@ -36,7 +36,7 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                return RoleController.GetByName(name);
+                return new RoleController().GetByName(name);
             }
             catch (Exception e)
             {
@@ -48,7 +48,7 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                RoleController.Add(name);
+                new RoleController().Add(name);
                 return true;
             }
             catch (Exception e)
@@ -61,7 +61,7 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                RoleController.Update(id, name);
+                new RoleController().Update(id, name);
                 return true;
             }
             catch (Exception e)
@@ -74,7 +74,7 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                RoleController.Delete(id);
+                new RoleController().Delete(id);
                 return true;
             }
             catch (Exception e)

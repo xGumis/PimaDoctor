@@ -2,14 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using LinqToDB;
+using LinqToDB.Data;
+using NUnit.Framework.Constraints;
 using PimaDoctor.Models;
 
 namespace PimaDoctor.Controllers
 {
-    public static class RoleController
+    public class RoleController
     {
-        public static List<Role> All()
+        private readonly bool _test;
+        public RoleController(bool test = false)
         {
+            _test = test;
+        }
+        
+        public List<Role> All()
+        {
+            DataConnection.DefaultSettings = new MySettings(_test);
+
             using var db = new DbCinema();
             var query = from role in db.Roles
                 orderby role.Name descending
@@ -18,8 +28,10 @@ namespace PimaDoctor.Controllers
             return roles;
         }
 
-        public static Role Get(int id)
+        public Role Get(int id)
         {
+            DataConnection.DefaultSettings = new MySettings(_test);
+
             using var db = new DbCinema();
             var query = from role in db.Roles
                 where role.Id == id
@@ -28,8 +40,10 @@ namespace PimaDoctor.Controllers
             return singleRole;
         }
 
-        public static Role GetByName(string name)
+        public Role GetByName(string name)
         {
+            DataConnection.DefaultSettings = new MySettings(_test);
+
             using var db = new DbCinema();
             var query = from role in db.Roles
                 where role.Name == name
@@ -38,16 +52,20 @@ namespace PimaDoctor.Controllers
             return singleRole;
         }
 
-        public static void Add(string name)
+        public void Add(string name)
         {
+            DataConnection.DefaultSettings = new MySettings(_test);
+
             using var db = new DbCinema();
             db.Roles
                 .Value(role => role.Name, name)
                 .Insert();
         }
 
-        public static void Update(int id, string? name)
+        public void Update(int id, string? name)
         {
+            DataConnection.DefaultSettings = new MySettings(_test);
+
             using var db = new DbCinema();
             var role = Get(id);
 
@@ -59,8 +77,10 @@ namespace PimaDoctor.Controllers
             db.Update(role);
         }
         
-        public static void Delete(int id)
+        public void Delete(int id)
         {
+            DataConnection.DefaultSettings = new MySettings(_test);
+
             using var db = new DbCinema();
             db.Roles
                 .Where(role => role.Id == id)
