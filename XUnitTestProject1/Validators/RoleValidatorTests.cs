@@ -8,57 +8,59 @@ namespace XUnitTestProject1.Validators
 {
     public class RoleValidatorTests
     {
+        private readonly RoleValidator _rv = new RoleValidator(true);
+        
         [Fact]
         public void ListTest()
         {
-            var roles = RoleValidator.GetAllRoles();
+            var roles = _rv.GetAllRoles();
             roles.Should().BeOfType<List<Role>>();
         }
 
         [Fact]
         public void GetRoleByIdTest()
         {
-            RoleValidator.RoleAddValidation("testRole");
-            var roleId = RoleValidator.GetRoleByName("testRole").Id;
-            var role = RoleValidator.GetRoleById(roleId);
+            _rv.RoleAddValidation("testRole");
+            var roleId = _rv.GetRoleByName("testRole").Id;
+            var role = _rv.GetRoleById(roleId);
             role.Should().BeOfType<Role>();
-            RoleValidator.RoleDeleteValidation(role.Id);
+            _rv.RoleDeleteValidation(role.Id);
         }
 
         [Fact]
         public void GetRoleByNameTest()
         {
-            RoleValidator.RoleAddValidation("testRole");
-            var role = RoleValidator.GetRoleByName("testRole");
+            _rv.RoleAddValidation("testRole");
+            var role = _rv.GetRoleByName("testRole");
             role.Should().BeOfType<Role>();
-            RoleValidator.RoleDeleteValidation(role.Id);
+            _rv.RoleDeleteValidation(role.Id);
         }
 
         [Fact]
         public void RoleAddValidationTest()
         {
-            var success = RoleValidator.RoleAddValidation("testRole");
+            var success = _rv.RoleAddValidation("testRole");
             success.Should().BeTrue();
-            var role = RoleValidator.GetRoleByName("testRole");
-            RoleValidator.RoleDeleteValidation(role.Id);
+            var role = _rv.GetRoleByName("testRole");
+            _rv.RoleDeleteValidation(role.Id);
         }
 
         [Fact]
         public void RoleUpdateValidationTest()
         {
-            RoleValidator.RoleAddValidation("testRole");
-            var role = RoleValidator.GetRoleByName("testRole");
-            var success = RoleValidator.RoleUpdateValidation(role.Id, "updatedRole");
+            _rv.RoleAddValidation("testRole");
+            var role = _rv.GetRoleByName("testRole");
+            var success = _rv.RoleUpdateValidation(role.Id, "updatedRole");
             success.Should().BeTrue();
-            RoleValidator.RoleDeleteValidation(role.Id);
+            _rv.RoleDeleteValidation(role.Id);
         }
 
         [Fact]
         public void RoleDeleteValidationTest()
         {
-            RoleValidator.RoleAddValidation("testRole");
-            var role = RoleValidator.GetRoleByName("testRole");
-            var success = RoleValidator.RoleDeleteValidation(role.Id);
+            _rv.RoleAddValidation("testRole");
+            var role = _rv.GetRoleByName("testRole");
+            var success = _rv.RoleDeleteValidation(role.Id);
             success.Should().BeTrue();
         }
     }

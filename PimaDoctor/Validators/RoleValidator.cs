@@ -5,14 +5,19 @@ using PimaDoctor.Models;
 
 namespace PimaDoctor.Validators
 {
-    public static class RoleValidator
+    public class RoleValidator
     {
+        private readonly bool _test;
+        public RoleValidator(bool test = false)
+        {
+            _test = test;
+        }
 
-        public static List<Role> GetAllRoles()
+        public List<Role> GetAllRoles()
         {
             try
             {
-                return new RoleController().All();
+                return new RoleController(_test).All();
             }
             catch (Exception e)
             {
@@ -20,11 +25,11 @@ namespace PimaDoctor.Validators
             }
         }
 
-        public static Role GetRoleById(int id)
+        public Role GetRoleById(int id)
         {
             try
             {
-                return new RoleController().Get(id);
+                return new RoleController(_test).Get(id);
             }
             catch (Exception e)
             {
@@ -32,11 +37,11 @@ namespace PimaDoctor.Validators
             }
         }
 
-        public static Role GetRoleByName(string name)
+        public Role GetRoleByName(string name)
         {
             try
             {
-                return new RoleController().GetByName(name);
+                return new RoleController(_test).GetByName(name);
             }
             catch (Exception e)
             {
@@ -44,11 +49,11 @@ namespace PimaDoctor.Validators
             }
         }
 
-        public static bool RoleAddValidation(string name)
+        public bool RoleAddValidation(string name)
         {
             try
             {
-                new RoleController().Add(name);
+                new RoleController(_test).Add(name);
                 return true;
             }
             catch (Exception e)
@@ -57,11 +62,11 @@ namespace PimaDoctor.Validators
             }
         }
 
-        public static bool RoleUpdateValidation(int id, string name)
+        public bool RoleUpdateValidation(int id, string name)
         {
             try
             {
-                new RoleController().Update(id, name);
+                new RoleController(_test).Update(id, name);
                 return true;
             }
             catch (Exception e)
@@ -70,11 +75,11 @@ namespace PimaDoctor.Validators
             }
         }
 
-        public static bool RoleDeleteValidation(int id)
+        public bool RoleDeleteValidation(int id)
         {
             try
             {
-                new RoleController().Delete(id);
+                new RoleController(_test).Delete(id);
                 return true;
             }
             catch (Exception e)
