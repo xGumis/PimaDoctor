@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PimaDoctor.Utilities
 {
-    public class RSAEncryption
+    public static class RSAEncryption
     {
         public static string containerName = "containerName";
         

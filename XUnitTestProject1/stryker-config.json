@@ -23,7 +23,8 @@
     "mutate": [
       "!**/*PythonExtensions.cs",
       "!**/*AbstractControlDescriptionProvider.cs",
-      "!**/*Views/*.cs"
+      "!**/*Views/*.cs",
+      "!**/*ViewModels/*.cs"
     ],
     "test-projects": [
       "XUnitTestProject1.csproj"
