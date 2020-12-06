@@ -7,7 +7,7 @@
     ],
     "log-level": "info",
     "log-file":true,
-    "timeout-ms": 10000,
+    "timeout-ms": 60000,
     "project-file": "PimaDoctor.csproj",
     "solution-path": "../PimaDoctor.sln",
     "mutation-level": "Basic",
