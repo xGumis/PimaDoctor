@@ -45,10 +45,10 @@ namespace XUnitTestProject1.Controllers
             var role = rc.GetByName("testRole");
             
             rc.Update(role.Id, "updatedRole");
-            role = rc.GetByName("updatedRole");
+            var updatedRole = rc.GetByName("updatedRole");
             
-            role.Should().BeOfType<Role>();
-            role.Name.Should().Be("updatedRole");
+            updatedRole.Should().BeOfType<Role>();
+            updatedRole.Name.Should().Be("updatedRole");
             rc.Delete(role.Id);
         }
         
