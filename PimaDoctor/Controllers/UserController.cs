@@ -68,7 +68,7 @@ namespace PimaDoctor.Controllers
             using var db = new DbCinema();
             db.Users
                 .Value(user => user.Login, login)
-                .Value(user => user.Password, PasswordCipher.ConvertPassword(password))
+                .Value(user => user.Password, RSAEncryption.Encrypt(password))
                 .Value(user => user.RoleId, roleId)
                 .Insert();
         }
@@ -82,7 +82,7 @@ namespace PimaDoctor.Controllers
 
             if (password != null)
             {
-                user.Password = PasswordCipher.ConvertPassword(password);
+                user.Password = RSAEncryption.Encrypt(password);
             }
             
             if (roleId != null)
@@ -108,7 +108,7 @@ namespace PimaDoctor.Controllers
             DataConnection.DefaultSettings = new MySettings(_test);
             
             using var db = new DbCinema();
-            string encodedPassword = PasswordCipher.ConvertPassword(password);
+            string encodedPassword = RSAEncryption.Encrypt(password);
             var queryable = from user in db.Users
                 where user.Login == login && user.Password == encodedPassword
                 select user;
