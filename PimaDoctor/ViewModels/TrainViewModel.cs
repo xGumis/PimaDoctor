@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PimaDoctor.Views.Interfaces;
+using PimaDoctor.Neural;
 
 namespace PimaDoctor.ViewModels
 {
@@ -26,17 +27,17 @@ namespace PimaDoctor.ViewModels
 
         private bool SaveNetwork(string weight_path, string structure_path)
         {
-            throw new NotImplementedException();
+            return Network.SaveModel(weight_path, structure_path);
         }
 
         private bool LoadNetwork(string weight_path, string structure_path)
         {
-            throw new NotImplementedException();
+            return Network.LoadModel(weight_path, structure_path);
         }
 
         private bool RetrainNetwork(string path)
         {
-            throw new NotImplementedException();
+            return Network.TrainNetwork(path);
         }
 
     }

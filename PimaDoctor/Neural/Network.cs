@@ -17,13 +17,15 @@ namespace PimaDoctor.Neural
     {
         private static BaseModel? _model;
 
-        public static void TrainNetwork()
+        public static bool TrainNetwork(string path)
         {
             Keras.Keras.DisablePySysConsoleLog = true;
-            var records = ReadCsv("Datasets/diabetes.csv");
+            try
+            {
+                var records = ReadCsv(path);
 
-            NDArray data = records.Select(x =>
-                new [] {
+                NDArray data = records.Select(x =>
+                    new[] {
                     x.Pregnancies,
                     x.Glucose,
                     x.BloodPressure,
@@ -32,38 +34,65 @@ namespace PimaDoctor.Neural
                     x.BMI,
                     x.DiabetesPedigreeFunction,
                     x.Age
-                }).ToArray();
-            NDArray outcome = records.Select(x => (double) x.Outcome).ToArray();
-            
-            NDarray datanew = data.ToNumpyNET();
-            NDarray outcomenew = outcome.ToNumpyNET();
+                    }).ToArray();
+                NDArray outcome = records.Select(x => (double)x.Outcome).ToArray();
 
-            var model = new Sequential();
-            model.Add(new Dense(8, activation: "tanh", input_dim: 8, kernel_initializer: "uniform"));
-            model.Add(new Dense(12, activation: "tanh", kernel_initializer: "uniform"));
-            model.Add(new Dense(1, activation: "sigmoid", kernel_initializer: "uniform"));
-            
-            model.Compile(optimizer:"adam", loss:"binary_crossentropy", metrics: new string[] { "accuracy" });
-            var history = model.Fit(datanew, outcomenew, batch_size: 10, epochs: 800, verbose: 1);
-            
-            /*
-             * Saving the model to file
-             */
-            var json = model.ToJson();
-            File.WriteAllText("model.json", json);
-            model.SaveWeight("model.h5");
-            var accuracy = history.HistoryLogs.Last().Value.Last();
+                NDarray datanew = data.ToNumpyNET();
+                NDarray outcomenew = outcome.ToNumpyNET();
+
+                var model = new Sequential();
+                model.Add(new Dense(8, activation: "tanh", input_dim: 8, kernel_initializer: "uniform"));
+                model.Add(new Dense(12, activation: "tanh", kernel_initializer: "uniform"));
+                model.Add(new Dense(1, activation: "sigmoid", kernel_initializer: "uniform"));
+
+                model.Compile(optimizer: "adam", loss: "binary_crossentropy", metrics: new string[] { "accuracy" });
+                model.Fit(datanew, outcomenew, batch_size: 10, epochs: 800, verbose: 1);
+
+                Utilities.Cache.Model = model;
+                return true;
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
         }
 
-        public static void LoadModel()
+        public static bool LoadModel(string weight_path, string structure_path)
         {
             Keras.Keras.DisablePySysConsoleLog = true;
+            try
+            {
+                /*
+                 * Reading the model from file
+                 */
+                Utilities.Cache.Model = BaseModel.ModelFromJson(File.ReadAllText(structure_path));
+                Utilities.Cache.Model.LoadWeight(weight_path);
+                return true;
 
-            /*
-             * Reading the model from file
-             */
-            _model = BaseModel.ModelFromJson(File.ReadAllText("model.json"));
-            _model.LoadWeight("model.h5");
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
+        }
+
+        public static bool SaveModel(string weight_path, string structure_path)
+        {
+            Keras.Keras.DisablePySysConsoleLog = true;
+            try
+            {
+                /*
+                 * Saving the model to file
+                 */
+                var json = Utilities.Cache.Model.ToJson();
+                File.WriteAllText(structure_path, json);
+                Utilities.Cache.Model.SaveWeight(weight_path);
+                return true;
+            }catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return false;
+            }
         }
 
         public static double Predict(Diabetes patientTest)
