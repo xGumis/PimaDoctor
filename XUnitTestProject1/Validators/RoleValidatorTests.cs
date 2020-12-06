@@ -63,5 +63,35 @@ namespace XUnitTestProject1.Validators
             var success = _rv.RoleDeleteValidation(role.Id);
             success.Should().BeTrue();
         }
+        
+        [Fact]
+        public void FailedGetRoleByIdTest()
+        {
+            var role = _rv.GetRoleById(-1);
+            role.Should().BeOfType<Role>();
+            role.Id.Should().Be(0);
+        }
+        
+        [Fact]
+        public void FailedGetRoleByNameTest()
+        {
+            var role = _rv.GetRoleByName("this role should not exist");
+            role.Should().BeOfType<Role>();
+            role.Id.Should().Be(0);
+        }
+
+        [Fact]
+        public void FailedRoleUpdateValidation()
+        {
+            var success = _rv.RoleUpdateValidation(-1, "test");
+            success.Should().BeFalse();
+        }
+
+        [Fact]
+        public void FailedRoleDeleteValidation()
+        {
+            var success = _rv.RoleDeleteValidation(-1);
+            success.Should().BeFalse();
+        }
     }
 }

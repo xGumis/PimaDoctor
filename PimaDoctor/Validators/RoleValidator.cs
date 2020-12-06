@@ -79,6 +79,7 @@ namespace PimaDoctor.Validators
         {
             try
             {
+                new RoleController(_test).Get(id);
                 new RoleController(_test).Delete(id);
                 return true;
             }
