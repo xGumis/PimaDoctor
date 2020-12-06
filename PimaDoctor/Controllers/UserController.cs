@@ -53,7 +53,7 @@ namespace PimaDoctor.Controllers
             using var db = new DbCinema();
             db.Users
                 .Value(user => user.Login, login)
-                .Value(user => user.Password, PasswordCipher.ConvertPassword(password))
+                .Value(user => user.Password, PasswordCipher.Encrypt(password))
                 .Value(user => user.RoleId, roleId)
                 .Insert();
         }
@@ -65,7 +65,7 @@ namespace PimaDoctor.Controllers
 
             if (password != null)
             {
-                user.Password = PasswordCipher.ConvertPassword(password);
+                user.Password = PasswordCipher.Encrypt(password);
             }
             
             if (roleId != null)
@@ -87,7 +87,7 @@ namespace PimaDoctor.Controllers
         public static bool Login(string login, string password)
         {
             using var db = new DbCinema();
-            string encodedPassword = PasswordCipher.ConvertPassword(password);
+            string encodedPassword = PasswordCipher.Encrypt(password);
             var queryable = from user in db.Users
                 where user.Login == login && user.Password == encodedPassword
                 select user;
