@@ -190,7 +190,6 @@
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\Connection.cs" />
     <Compile Include="Models\DbCinema.cs" />
     <Compile Include="Models\Diabetes.cs" />

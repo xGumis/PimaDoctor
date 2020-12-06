@@ -38,16 +38,6 @@ namespace XUnitTestProject1.Controllers
         }
 
         [Fact]
-        public void GetRole()
-        {
-            var rc = new RoleController(true);
-            rc.Add("testRole");
-            var role = rc.GetByName("testRole");
-            role.Should().BeOfType<Role>();
-            rc.Delete(role.Id);
-        }
-        
-        [Fact]
         public void UpdateRole()
         {
             var rc = new RoleController(true);

@@ -57,7 +57,7 @@ namespace PimaDoctor.Controllers
             DataConnection.DefaultSettings = new MySettings(_test);
 
             using var db = new DbCinema();
-            db.Roles
+            var statement = db.Roles
                 .Value(role => role.Name, name)
                 .Insert();
         }

@@ -12,7 +12,7 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                return UserController.All();
+                return new UserController().All();
             }
             catch (Exception e)
             {
@@ -24,7 +24,7 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                return UserController.Get(id);
+                return new UserController().Get(id);
             }
             catch (Exception e)
             {
@@ -36,7 +36,7 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                return UserController.GetByLogin(login);
+                return new UserController().GetByLogin(login);
             }
             catch (Exception e)
             {
@@ -48,7 +48,7 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                UserController.Add(login, password, roleId);
+                new UserController().Add(login, password, roleId);
                 return true;
             }
             catch (Exception e)
@@ -61,7 +61,7 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                UserController.Update(id, password, roleId);
+                new UserController().Update(id, password, roleId);
                 return true;
             }
             catch (Exception e)
@@ -74,7 +74,7 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                UserController.Delete(id);
+                new UserController().Delete(id);
                 return true;
             }
             catch (Exception e)
@@ -87,7 +87,7 @@ namespace PimaDoctor.Validators
         {
             try
             {
-                return UserController.Login(login, password);
+                return new UserController().Login(login, password);
             }
             catch (Exception e)
             {

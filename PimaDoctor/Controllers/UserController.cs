@@ -1,15 +1,24 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using LinqToDB;
+using LinqToDB.Data;
 using PimaDoctor.Models;
 using PimaDoctor.Utilities;
 
 namespace PimaDoctor.Controllers
 {
-    public static class UserController
+    public class UserController
     {
-        public static List<User> All()
+        private readonly bool _test;
+        public UserController(bool test = false)
         {
+            _test = test;
+        }
+        
+        public List<User> All()
+        {
+            DataConnection.DefaultSettings = new MySettings(_test);
+            
             using var db = new DbCinema();
             var query = from user in db.Users
                 orderby user.Login descending
@@ -18,8 +27,10 @@ namespace PimaDoctor.Controllers
             return users;
         }
         
-        public static User Get(int id)
+        public User Get(int id)
         {
+            DataConnection.DefaultSettings = new MySettings(_test);
+            
             using var db = new DbCinema();
             var queryable = from user in db.Users
                 where user.Id == id
@@ -30,8 +41,10 @@ namespace PimaDoctor.Controllers
             return singleUser;
         }
 
-        public static User GetByLogin(string login)
+        public User GetByLogin(string login)
         {
+            DataConnection.DefaultSettings = new MySettings(_test);
+            
             using var db = new DbCinema();
             var queryable = from user in db.Users
                             where user.Login == login
@@ -48,8 +61,10 @@ namespace PimaDoctor.Controllers
          * 2 - doctor
          * 3 - patient
          */
-        public static void Add(string login, string password, int roleId = 3)
+        public void Add(string login, string password, int roleId = 3)
         {
+            DataConnection.DefaultSettings = new MySettings(_test);
+            
             using var db = new DbCinema();
             db.Users
                 .Value(user => user.Login, login)
@@ -58,8 +73,10 @@ namespace PimaDoctor.Controllers
                 .Insert();
         }
 
-        public static void Update(int id, string? password = null, int? roleId = null)
+        public void Update(int id, string? password = null, int? roleId = null)
         {
+            DataConnection.DefaultSettings = new MySettings(_test);
+            
             using var db = new DbCinema();
             var user = Get(id);
 
@@ -76,16 +93,20 @@ namespace PimaDoctor.Controllers
             db.Update(user);
         }
         
-        public static void Delete(int id)
+        public void Delete(int id)
         {
+            DataConnection.DefaultSettings = new MySettings(_test);
+            
             using var db = new DbCinema();
             db.Users
                 .Where(user => user.Id == id)
                 .Delete();
         }
 
-        public static bool Login(string login, string password)
+        public bool Login(string login, string password)
         {
+            DataConnection.DefaultSettings = new MySettings(_test);
+            
             using var db = new DbCinema();
             string encodedPassword = PasswordCipher.ConvertPassword(password);
             var queryable = from user in db.Users
