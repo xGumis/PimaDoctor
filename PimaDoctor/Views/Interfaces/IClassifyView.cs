@@ -8,6 +8,6 @@ namespace PimaDoctor.Views.Interfaces
 {
     interface IClassifyView
     {
-        public Func<int,int,int,int,int,double,double,int,bool> ClassifyData { get; set; }
+        public Func<int,int,int,int,int,double,double,int,double> ClassifyData { get; set; }
     }
 }

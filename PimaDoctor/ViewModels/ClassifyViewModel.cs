@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PimaDoctor.Models;
 using PimaDoctor.Views.Interfaces;
 
 namespace PimaDoctor.ViewModels
@@ -14,9 +15,20 @@ namespace PimaDoctor.ViewModels
             view.ClassifyData += ClassifyData;
         }
 
-        private bool ClassifyData(int pregnancies, int glucose, int bloodPressure, int skinThickness, int insulin, double bmi, double diabetesPedigreeFunction, int age)
+        private double ClassifyData(int pregnancies, int glucose, int bloodPressure, int skinThickness, int insulin, double bmi, double diabetesPedigreeFunction, int age)
         {
-            throw new NotImplementedException();
+            var test = new Diabetes()
+            {
+                Pregnancies = pregnancies,
+                Glucose = glucose,
+                BloodPressure = bloodPressure,
+                SkinThickness = skinThickness,
+                Insulin = insulin,
+                BMI = bmi,
+                DiabetesPedigreeFunction = diabetesPedigreeFunction,
+                Age = age
+            };
+            return Neural.Network.Predict(test);
         }
 
     }

@@ -30,34 +30,34 @@
         {
             this.buttonBack = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.labelPregnancies = new System.Windows.Forms.Label();
-            this.labelGlucose = new System.Windows.Forms.Label();
-            this.labelPressure = new System.Windows.Forms.Label();
-            this.labelThickness = new System.Windows.Forms.Label();
-            this.labelInsulin = new System.Windows.Forms.Label();
-            this.labelBMI = new System.Windows.Forms.Label();
-            this.labelDPF = new System.Windows.Forms.Label();
-            this.labelAge = new System.Windows.Forms.Label();
-            this.labelResult = new System.Windows.Forms.Label();
-            this.numericUpDownPregnancies = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownGlucose = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownPressure = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownThickness = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownInsulin = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownBMI = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDownDPF = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownAge = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownDPF = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownBMI = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownInsulin = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownThickness = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownPressure = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownGlucose = new System.Windows.Forms.NumericUpDown();
+            this.labelResult = new System.Windows.Forms.Label();
+            this.labelAge = new System.Windows.Forms.Label();
+            this.labelDPF = new System.Windows.Forms.Label();
+            this.labelBMI = new System.Windows.Forms.Label();
+            this.labelInsulin = new System.Windows.Forms.Label();
+            this.labelThickness = new System.Windows.Forms.Label();
+            this.labelPressure = new System.Windows.Forms.Label();
+            this.labelGlucose = new System.Windows.Forms.Label();
+            this.labelPregnancies = new System.Windows.Forms.Label();
+            this.numericUpDownPregnancies = new System.Windows.Forms.NumericUpDown();
             this.labelResultBool = new System.Windows.Forms.Label();
             this.buttonClassify = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPregnancies)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlucose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPressure)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownThickness)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInsulin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBMI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDPF)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDPF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBMI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInsulin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownThickness)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPressure)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlucose)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPregnancies)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -111,148 +111,13 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(231, 310);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // labelPregnancies
+            // numericUpDownAge
             // 
-            this.labelPregnancies.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelPregnancies.AutoSize = true;
-            this.labelPregnancies.Location = new System.Drawing.Point(95, 8);
-            this.labelPregnancies.Name = "labelPregnancies";
-            this.labelPregnancies.Size = new System.Drawing.Size(63, 13);
-            this.labelPregnancies.TabIndex = 0;
-            this.labelPregnancies.Text = "Liczba ciąż:";
-            // 
-            // labelGlucose
-            // 
-            this.labelGlucose.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelGlucose.AutoSize = true;
-            this.labelGlucose.Location = new System.Drawing.Point(75, 38);
-            this.labelGlucose.Name = "labelGlucose";
-            this.labelGlucose.Size = new System.Drawing.Size(83, 13);
-            this.labelGlucose.TabIndex = 2;
-            this.labelGlucose.Text = "Poziom glukozy:";
-            // 
-            // labelPressure
-            // 
-            this.labelPressure.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelPressure.AutoSize = true;
-            this.labelPressure.Location = new System.Drawing.Point(84, 68);
-            this.labelPressure.Name = "labelPressure";
-            this.labelPressure.Size = new System.Drawing.Size(74, 13);
-            this.labelPressure.TabIndex = 4;
-            this.labelPressure.Text = "Ciśnienie krwi:";
-            // 
-            // labelThickness
-            // 
-            this.labelThickness.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelThickness.AutoSize = true;
-            this.labelThickness.Location = new System.Drawing.Point(80, 98);
-            this.labelThickness.Name = "labelThickness";
-            this.labelThickness.Size = new System.Drawing.Size(78, 13);
-            this.labelThickness.TabIndex = 6;
-            this.labelThickness.Text = "Grubość skóry:";
-            // 
-            // labelInsulin
-            // 
-            this.labelInsulin.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelInsulin.AutoSize = true;
-            this.labelInsulin.Location = new System.Drawing.Point(77, 128);
-            this.labelInsulin.Name = "labelInsulin";
-            this.labelInsulin.Size = new System.Drawing.Size(81, 13);
-            this.labelInsulin.TabIndex = 8;
-            this.labelInsulin.Text = "Poziom insuliny:";
-            // 
-            // labelBMI
-            // 
-            this.labelBMI.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelBMI.AutoSize = true;
-            this.labelBMI.Location = new System.Drawing.Point(129, 158);
-            this.labelBMI.Name = "labelBMI";
-            this.labelBMI.Size = new System.Drawing.Size(29, 13);
-            this.labelBMI.TabIndex = 10;
-            this.labelBMI.Text = "BMI:";
-            // 
-            // labelDPF
-            // 
-            this.labelDPF.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelDPF.AutoSize = true;
-            this.labelDPF.Location = new System.Drawing.Point(29, 188);
-            this.labelDPF.Name = "labelDPF";
-            this.labelDPF.Size = new System.Drawing.Size(129, 13);
-            this.labelDPF.TabIndex = 12;
-            this.labelDPF.Text = "Funkcja metryki cukrzycy:";
-            // 
-            // labelAge
-            // 
-            this.labelAge.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelAge.AutoSize = true;
-            this.labelAge.Location = new System.Drawing.Point(123, 218);
-            this.labelAge.Name = "labelAge";
-            this.labelAge.Size = new System.Drawing.Size(35, 13);
-            this.labelAge.TabIndex = 14;
-            this.labelAge.Text = "Wiek:";
-            // 
-            // labelResult
-            // 
-            this.labelResult.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.labelResult.AutoSize = true;
-            this.labelResult.Location = new System.Drawing.Point(118, 288);
-            this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(40, 13);
-            this.labelResult.TabIndex = 18;
-            this.labelResult.Text = "Wynik:";
-            // 
-            // numericUpDownPregnancies
-            // 
-            this.numericUpDownPregnancies.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownPregnancies.Location = new System.Drawing.Point(164, 3);
-            this.numericUpDownPregnancies.Name = "numericUpDownPregnancies";
-            this.numericUpDownPregnancies.Size = new System.Drawing.Size(64, 20);
-            this.numericUpDownPregnancies.TabIndex = 19;
-            // 
-            // numericUpDownGlucose
-            // 
-            this.numericUpDownGlucose.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownGlucose.Location = new System.Drawing.Point(164, 33);
-            this.numericUpDownGlucose.Name = "numericUpDownGlucose";
-            this.numericUpDownGlucose.Size = new System.Drawing.Size(64, 20);
-            this.numericUpDownGlucose.TabIndex = 20;
-            // 
-            // numericUpDownPressure
-            // 
-            this.numericUpDownPressure.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownPressure.Location = new System.Drawing.Point(164, 63);
-            this.numericUpDownPressure.Name = "numericUpDownPressure";
-            this.numericUpDownPressure.Size = new System.Drawing.Size(64, 20);
-            this.numericUpDownPressure.TabIndex = 21;
-            // 
-            // numericUpDownThickness
-            // 
-            this.numericUpDownThickness.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownThickness.Location = new System.Drawing.Point(164, 93);
-            this.numericUpDownThickness.Name = "numericUpDownThickness";
-            this.numericUpDownThickness.Size = new System.Drawing.Size(64, 20);
-            this.numericUpDownThickness.TabIndex = 22;
-            // 
-            // numericUpDownInsulin
-            // 
-            this.numericUpDownInsulin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownInsulin.Location = new System.Drawing.Point(164, 123);
-            this.numericUpDownInsulin.Name = "numericUpDownInsulin";
-            this.numericUpDownInsulin.Size = new System.Drawing.Size(64, 20);
-            this.numericUpDownInsulin.TabIndex = 23;
-            // 
-            // numericUpDownBMI
-            // 
-            this.numericUpDownBMI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownBMI.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
-            this.numericUpDownBMI.Location = new System.Drawing.Point(164, 153);
-            this.numericUpDownBMI.Name = "numericUpDownBMI";
-            this.numericUpDownBMI.Size = new System.Drawing.Size(64, 20);
-            this.numericUpDownBMI.TabIndex = 24;
+            this.numericUpDownAge.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDownAge.Location = new System.Drawing.Point(164, 213);
+            this.numericUpDownAge.Name = "numericUpDownAge";
+            this.numericUpDownAge.Size = new System.Drawing.Size(64, 20);
+            this.numericUpDownAge.TabIndex = 26;
             // 
             // numericUpDownDPF
             // 
@@ -267,13 +132,148 @@
             this.numericUpDownDPF.Size = new System.Drawing.Size(64, 20);
             this.numericUpDownDPF.TabIndex = 25;
             // 
-            // numericUpDownAge
+            // numericUpDownBMI
             // 
-            this.numericUpDownAge.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownAge.Location = new System.Drawing.Point(164, 213);
-            this.numericUpDownAge.Name = "numericUpDownAge";
-            this.numericUpDownAge.Size = new System.Drawing.Size(64, 20);
-            this.numericUpDownAge.TabIndex = 26;
+            this.numericUpDownBMI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDownBMI.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
+            this.numericUpDownBMI.Location = new System.Drawing.Point(164, 153);
+            this.numericUpDownBMI.Name = "numericUpDownBMI";
+            this.numericUpDownBMI.Size = new System.Drawing.Size(64, 20);
+            this.numericUpDownBMI.TabIndex = 24;
+            // 
+            // numericUpDownInsulin
+            // 
+            this.numericUpDownInsulin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDownInsulin.Location = new System.Drawing.Point(164, 123);
+            this.numericUpDownInsulin.Name = "numericUpDownInsulin";
+            this.numericUpDownInsulin.Size = new System.Drawing.Size(64, 20);
+            this.numericUpDownInsulin.TabIndex = 23;
+            // 
+            // numericUpDownThickness
+            // 
+            this.numericUpDownThickness.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDownThickness.Location = new System.Drawing.Point(164, 93);
+            this.numericUpDownThickness.Name = "numericUpDownThickness";
+            this.numericUpDownThickness.Size = new System.Drawing.Size(64, 20);
+            this.numericUpDownThickness.TabIndex = 22;
+            // 
+            // numericUpDownPressure
+            // 
+            this.numericUpDownPressure.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDownPressure.Location = new System.Drawing.Point(164, 63);
+            this.numericUpDownPressure.Name = "numericUpDownPressure";
+            this.numericUpDownPressure.Size = new System.Drawing.Size(64, 20);
+            this.numericUpDownPressure.TabIndex = 21;
+            // 
+            // numericUpDownGlucose
+            // 
+            this.numericUpDownGlucose.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDownGlucose.Location = new System.Drawing.Point(164, 33);
+            this.numericUpDownGlucose.Name = "numericUpDownGlucose";
+            this.numericUpDownGlucose.Size = new System.Drawing.Size(64, 20);
+            this.numericUpDownGlucose.TabIndex = 20;
+            // 
+            // labelResult
+            // 
+            this.labelResult.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelResult.AutoSize = true;
+            this.labelResult.Location = new System.Drawing.Point(118, 288);
+            this.labelResult.Name = "labelResult";
+            this.labelResult.Size = new System.Drawing.Size(40, 13);
+            this.labelResult.TabIndex = 18;
+            this.labelResult.Text = "Wynik:";
+            // 
+            // labelAge
+            // 
+            this.labelAge.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelAge.AutoSize = true;
+            this.labelAge.Location = new System.Drawing.Point(123, 218);
+            this.labelAge.Name = "labelAge";
+            this.labelAge.Size = new System.Drawing.Size(35, 13);
+            this.labelAge.TabIndex = 14;
+            this.labelAge.Text = "Wiek:";
+            // 
+            // labelDPF
+            // 
+            this.labelDPF.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelDPF.AutoSize = true;
+            this.labelDPF.Location = new System.Drawing.Point(29, 188);
+            this.labelDPF.Name = "labelDPF";
+            this.labelDPF.Size = new System.Drawing.Size(129, 13);
+            this.labelDPF.TabIndex = 12;
+            this.labelDPF.Text = "Funkcja metryki cukrzycy:";
+            // 
+            // labelBMI
+            // 
+            this.labelBMI.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelBMI.AutoSize = true;
+            this.labelBMI.Location = new System.Drawing.Point(129, 158);
+            this.labelBMI.Name = "labelBMI";
+            this.labelBMI.Size = new System.Drawing.Size(29, 13);
+            this.labelBMI.TabIndex = 10;
+            this.labelBMI.Text = "BMI:";
+            // 
+            // labelInsulin
+            // 
+            this.labelInsulin.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelInsulin.AutoSize = true;
+            this.labelInsulin.Location = new System.Drawing.Point(77, 128);
+            this.labelInsulin.Name = "labelInsulin";
+            this.labelInsulin.Size = new System.Drawing.Size(81, 13);
+            this.labelInsulin.TabIndex = 8;
+            this.labelInsulin.Text = "Poziom insuliny:";
+            // 
+            // labelThickness
+            // 
+            this.labelThickness.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelThickness.AutoSize = true;
+            this.labelThickness.Location = new System.Drawing.Point(80, 98);
+            this.labelThickness.Name = "labelThickness";
+            this.labelThickness.Size = new System.Drawing.Size(78, 13);
+            this.labelThickness.TabIndex = 6;
+            this.labelThickness.Text = "Grubość skóry:";
+            // 
+            // labelPressure
+            // 
+            this.labelPressure.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelPressure.AutoSize = true;
+            this.labelPressure.Location = new System.Drawing.Point(84, 68);
+            this.labelPressure.Name = "labelPressure";
+            this.labelPressure.Size = new System.Drawing.Size(74, 13);
+            this.labelPressure.TabIndex = 4;
+            this.labelPressure.Text = "Ciśnienie krwi:";
+            // 
+            // labelGlucose
+            // 
+            this.labelGlucose.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelGlucose.AutoSize = true;
+            this.labelGlucose.Location = new System.Drawing.Point(75, 38);
+            this.labelGlucose.Name = "labelGlucose";
+            this.labelGlucose.Size = new System.Drawing.Size(83, 13);
+            this.labelGlucose.TabIndex = 2;
+            this.labelGlucose.Text = "Poziom glukozy:";
+            // 
+            // labelPregnancies
+            // 
+            this.labelPregnancies.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.labelPregnancies.AutoSize = true;
+            this.labelPregnancies.Location = new System.Drawing.Point(95, 8);
+            this.labelPregnancies.Name = "labelPregnancies";
+            this.labelPregnancies.Size = new System.Drawing.Size(63, 13);
+            this.labelPregnancies.TabIndex = 0;
+            this.labelPregnancies.Text = "Liczba ciąż:";
+            // 
+            // numericUpDownPregnancies
+            // 
+            this.numericUpDownPregnancies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.numericUpDownPregnancies.Location = new System.Drawing.Point(164, 3);
+            this.numericUpDownPregnancies.Name = "numericUpDownPregnancies";
+            this.numericUpDownPregnancies.Size = new System.Drawing.Size(64, 20);
+            this.numericUpDownPregnancies.TabIndex = 19;
             // 
             // labelResultBool
             // 
@@ -307,14 +307,14 @@
             this.Size = new System.Drawing.Size(611, 489);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPregnancies)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlucose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPressure)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownThickness)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInsulin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBMI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDPF)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownAge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownDPF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBMI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownInsulin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownThickness)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPressure)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownGlucose)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPregnancies)).EndInit();
             this.ResumeLayout(false);
 
         }

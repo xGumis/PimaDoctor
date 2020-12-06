@@ -21,7 +21,7 @@ namespace PimaDoctor.Views
             viewModel = new ClassifyViewModel(this);
         }
         private ClassifyViewModel viewModel;
-        public Func<int, int, int, int, int, double, double, int, bool> ClassifyData { get; set; }
+        public Func<int, int, int, int, int, double, double, int, double> ClassifyData { get; set; }
 
         private void buttonClassify_Click(object sender, EventArgs e)
         {
@@ -34,7 +34,8 @@ namespace PimaDoctor.Views
             var dpf = Decimal.ToDouble(numericUpDownDPF.Value);
             var age = Decimal.ToInt32(numericUpDownAge.Value);
             var res = ClassifyData(pregnancies, glucose, pressure, thickness, insuline, bmi, dpf, age);
-            labelResultBool.Text = res.ToString();
+
+            labelResultBool.Text = $"{Math.Truncate(res*100)}%";
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
