@@ -15,32 +15,31 @@ namespace PimaDoctor.ViewModels
             view.GoToClassify += GoToClassify;
             view.GoToTrain += GoToTrain;
             view.GoToUserAdd += GoToUserAdd;
-            view.GetRole += GetRole;
+            view.CheckForAdminRole += CheckForAdmin;
         }
 
-        private string GetRole()
+        private bool CheckForAdmin()
         {
-            throw new NotImplementedException();
+            if (Utilities.Cache.User.Role.Name == "admin")
+                return true;
+            return false;
         }
 
         private void GoToUserAdd()
         {
-            throw new NotImplementedException();
         }
 
         private void GoToTrain()
         {
-            throw new NotImplementedException();
         }
 
         private void GoToClassify()
         {
-            throw new NotImplementedException();
         }
 
         private void Logout()
         {
-            throw new NotImplementedException();
+            Utilities.Cache.Clear();
         }
     }
 }

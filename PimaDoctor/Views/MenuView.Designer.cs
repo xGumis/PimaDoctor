@@ -81,12 +81,11 @@
             // buttonTrain
             // 
             this.buttonTrain.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttonTrain.Enabled = false;
             this.buttonTrain.Location = new System.Drawing.Point(62, 48);
             this.buttonTrain.Name = "buttonTrain";
             this.buttonTrain.Size = new System.Drawing.Size(75, 23);
             this.buttonTrain.TabIndex = 0;
-            this.buttonTrain.Text = "Trenuj sieć";
+            this.buttonTrain.Text = "Opcje sieci";
             this.buttonTrain.UseVisualStyleBackColor = true;
             this.buttonTrain.Click += new System.EventHandler(this.buttonTrain_Click);
             // 

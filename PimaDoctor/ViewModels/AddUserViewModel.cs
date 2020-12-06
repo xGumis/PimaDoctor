@@ -11,24 +11,20 @@ namespace PimaDoctor.ViewModels
     {
         public AddUserViewModel(IAddUserView view)
         {
-            view.GoBackToMenu += Back;
             view.AddUser += AddUser;
             view.GetRoles += GetRoles;
         }
 
         private string[] GetRoles()
         {
-            throw new NotImplementedException();
+            return Validators.RoleValidator.GetAllRoles().Select(x => x.Name).ToArray();
         }
 
         private bool AddUser(string username, string password, string role)
         {
-            throw new NotImplementedException();
+            var roleId = Validators.RoleValidator.GetRoleByName(role).Id;
+            return Validators.UserValidator.UserAddValidation(username, password, roleId);
         }
 
-        private void Back()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

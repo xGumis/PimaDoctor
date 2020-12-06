@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PimaDoctor.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace PimaDoctor.Utilities
 {
     public static class Cache
     {
-        //public static User User { get; set; }
+        public static User User { get; set; }
         //public static List<Reservation> Reservations { get; set; }
         //public static Reservation Reservation { get; set; }
         //public static List<Seance> Seances { get; set; }
@@ -22,5 +23,9 @@ namespace PimaDoctor.Utilities
         //public static WebSocketClient WsClient { get; set; }
         //public static WebSocketServer WsServer { get; set; }
         //public static Queue Queue { get; set; }
+        public static void Clear()
+        {
+            User = null;
+        }
     }
 }

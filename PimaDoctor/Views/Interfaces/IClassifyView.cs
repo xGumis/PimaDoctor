@@ -9,6 +9,5 @@ namespace PimaDoctor.Views.Interfaces
     interface IClassifyView
     {
         public Func<int,int,int,int,int,double,double,int,bool> ClassifyData { get; set; }
-        public Action GoBackToMenu { get; set; }
     }
 }

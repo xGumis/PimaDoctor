@@ -8,7 +8,9 @@ namespace PimaDoctor.Views.Interfaces
 {
     interface ITrainView
     {
-        public Func<bool> RetrainNetwork { get; set; }
-        public Action GetBackToMenu { get; set; }
+        public Func<string,bool> RetrainNetwork { get; set; }
+        public Func<string,string,bool> LoadNetwork { get; set; }
+        public Func<string,string,bool> SaveNetwork { get; set; }
+        public Func<bool> CheckForAdminRole { get; set; }
     }
 }

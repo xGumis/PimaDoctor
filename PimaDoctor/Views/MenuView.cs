@@ -18,10 +18,9 @@ namespace PimaDoctor.Views
         {
             InitializeComponent();
             viewModel = new MenuViewModel(this);
-            if(GetRole() == "admin")
+            if(CheckForAdminRole())
             {
                 buttonAddUser.Enabled = true;
-                buttonTrain.Enabled = true;
             }
         }
 
@@ -30,7 +29,7 @@ namespace PimaDoctor.Views
         public Action GoToTrain { get; set; }
         public Action GoToClassify { get; set; }
         public Action GoToUserAdd { get; set; }
-        public Func<string> GetRole { get; set; }
+        public Func<bool> CheckForAdminRole { get; set; }
 
         private void buttonTrain_Click(object sender, EventArgs e)
         {

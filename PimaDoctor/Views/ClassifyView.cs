@@ -22,7 +22,6 @@ namespace PimaDoctor.Views
         }
         private ClassifyViewModel viewModel;
         public Func<int, int, int, int, int, double, double, int, bool> ClassifyData { get; set; }
-        public Action GoBackToMenu { get; set; }
 
         private void buttonClassify_Click(object sender, EventArgs e)
         {
@@ -40,7 +39,6 @@ namespace PimaDoctor.Views
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            GoBackToMenu();
             Change_Window(new MenuView());
         }
     }
