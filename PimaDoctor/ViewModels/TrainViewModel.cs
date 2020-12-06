@@ -12,9 +12,29 @@ namespace PimaDoctor.ViewModels
         public TrainViewModel(ITrainView view)
         {
             view.RetrainNetwork += RetrainNetwork;
+            view.LoadNetwork += LoadNetwork;
+            view.SaveNetwork += SaveNetwork;
+            view.CheckForAdminRole += CheckAdmin;
         }
 
-        private bool RetrainNetwork()
+        private bool CheckAdmin()
+        {
+            if (Utilities.Cache.User.Role.Name == "admin")
+                return true;
+            return false;
+        }
+
+        private bool SaveNetwork(string weight_path, string structure_path)
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool LoadNetwork(string weight_path, string structure_path)
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool RetrainNetwork(string path)
         {
             throw new NotImplementedException();
         }

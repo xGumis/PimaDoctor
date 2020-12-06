@@ -21,7 +21,6 @@ namespace PimaDoctor.Views
             if(CheckForAdminRole())
             {
                 buttonAddUser.Enabled = true;
-                buttonTrain.Enabled = true;
             }
         }
 
