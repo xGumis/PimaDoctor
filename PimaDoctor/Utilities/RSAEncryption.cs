@@ -5,22 +5,21 @@ using System.Text;
 
  namespace PimaDoctor.Utilities
 {
-    class PasswordCipher
+    class RSAEncryption
     {
         public static string containerName = "containerName";
 
-        public static string Encrypt(string password)
+        public static string Encrypt(string data)
         {
-            var passwordAsBytes = Encoding.UTF8.GetBytes(password);
+            var dataAsBytes = Encoding.UTF8.GetBytes(data);
 
             using (var rsa = new RSACryptoServiceProvider(2048))
             {
                 try
                 {
                     rsa.FromXmlString(GetPublicKey());
-                    var encryptedPassword = rsa.Encrypt(passwordAsBytes, true);
-                    var base64Encryption = Convert.ToBase64String(encryptedPassword);
-                    Console.WriteLine("Encryption. Before: " + password + ", after: " + base64Encryption);
+                    var encryptedData = rsa.Encrypt(dataAsBytes, true);
+                    var base64Encryption = Convert.ToBase64String(encryptedData);
                     return base64Encryption;
                 }
                 finally
@@ -30,20 +29,19 @@ using System.Text;
             }
         }
 
-        public static string Decrypt(string password)
+        public static string Decrypt(string data)
         {
-            var passwordAsBytes = Encoding.UTF8.GetBytes(password);
+            var dataAsBytes = Encoding.UTF8.GetBytes(data);
 
             using (var rsa = new RSACryptoServiceProvider(2048))
             {
                 try
                 {
                     rsa.FromXmlString(GetPrivateKey());
-                    var resultBytes = Convert.FromBase64String(password);
-                    var decryptedPassword = rsa.Decrypt(passwordAsBytes, true);
-                    var decryptedEncodedPassword = Encoding.UTF8.GetString(decryptedPassword);
-                    Console.WriteLine("Decryption. Before: " + password + ", after: " + decryptedEncodedPassword);
-                    return decryptedEncodedPassword.ToString();
+                    var resultBytes = Convert.FromBase64String(data);
+                    var decryptedData = rsa.Decrypt(dataAsBytes, true);
+                    var decryptedEncodedData = Encoding.UTF8.GetString(decryptedData);
+                    return decryptedEncodedData.ToString();
                 }
                 finally
                 {
