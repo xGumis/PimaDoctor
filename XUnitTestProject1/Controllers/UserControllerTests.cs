@@ -13,7 +13,7 @@ namespace XUnitTestProject1.Controllers
         
         public UserControllerTests()
         {
-            var rc = new RoleController();
+            var rc = new RoleController(true);
 
             try
             {
@@ -57,7 +57,7 @@ namespace XUnitTestProject1.Controllers
         [Fact]
         public void UpdateUserTest()
         {
-            var rc = new RoleController();
+            var rc = new RoleController(true);
             rc.Add("anotherTestRole");
             var role = rc.GetByName("anotherTestRole");
             

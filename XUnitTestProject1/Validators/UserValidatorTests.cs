@@ -121,9 +121,11 @@ namespace XUnitTestProject1.Validators
         [Fact]
         public void FailedUserDeleteValidationTest()
         {
-            var userId = _uv.GetAllUsers().Last().Id + 1;
-            var success = _uv.UserDeleteValidation(userId);
+            _uv.UserAddValidation("test", "test", _roleId);
+            var userId = _uv.GetAllUsers().Last().Id;
+            var success = _uv.UserDeleteValidation(userId + 1);
             success.Should().BeFalse();
+            _uv.UserDeleteValidation(_roleId);
         }
 
         [Fact]
@@ -138,7 +140,6 @@ namespace XUnitTestProject1.Validators
         {
             var success = _uv.UserAddValidation("testUser", "testUser", -1);
             success.Should().BeFalse();
-
         }
     }
 }

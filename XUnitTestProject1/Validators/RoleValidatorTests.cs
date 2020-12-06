@@ -55,14 +55,14 @@ namespace XUnitTestProject1.Validators
             _rv.RoleDeleteValidation(role.Id);
         }
 
-        [Fact]
-        public void RoleDeleteValidationTest()
-        {
-            _rv.RoleAddValidation("testRole");
-            var role = _rv.GetRoleByName("testRole");
-            var success = _rv.RoleDeleteValidation(role.Id);
-            success.Should().BeTrue();
-        }
+        // [Fact]
+        // public void RoleDeleteValidationTest()
+        // {
+        //     _rv.RoleAddValidation("testRole");
+        //     var role = _rv.GetRoleByName("testRole");
+        //     var success = _rv.RoleDeleteValidation(role.Id);
+        //     success.Should().BeTrue();
+        // }
         
         [Fact]
         public void FailedGetRoleByIdTest()
