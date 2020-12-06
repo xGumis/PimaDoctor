@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using FluentAssertions;
 using PimaDoctor.Controllers;
 using PimaDoctor.Models;
+using PimaDoctor.Utilities;
 using Xunit;
 
 namespace XUnitTestProject1.Controllers
@@ -104,7 +105,7 @@ namespace XUnitTestProject1.Controllers
             var uc = new UserController(true);
             uc.Add("testUser", "testUser", _roleId);
             var user = uc.GetByLogin("testUser");
-        
+
             var loginSuccessful = uc.Login("testUser", "testUser");
             loginSuccessful.Should().BeTrue();
             

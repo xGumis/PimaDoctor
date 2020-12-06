@@ -108,12 +108,14 @@ namespace PimaDoctor.Controllers
             DataConnection.DefaultSettings = new MySettings(_test);
             
             using var db = new DbCinema();
-            string encodedPassword = RSAEncryption.Encrypt(password);
-            var queryable = from user in db.Users
-                where user.Login == login && user.Password == encodedPassword
-                select user;
+            var user = GetByLogin(login);
 
-            return queryable.ToList().Count > 0;
+            if (user != null && password == RSAEncryption.Decrypt(user.Password))
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
