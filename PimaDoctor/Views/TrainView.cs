@@ -22,6 +22,7 @@ namespace PimaDoctor.Views
             {
                 buttonSave.Enabled = true;
                 buttonTrain.Enabled = true;
+                buttonEncryptCSV.Enabled = true;
             }
         }
 
@@ -105,6 +106,29 @@ namespace PimaDoctor.Views
                         MessageBox.Show("Wczytywanie powiodło się");
                     else
                         MessageBox.Show("Wczytywanie nie powiodło się");
+                }
+            }
+        }
+
+        private void buttonEncryptCSV_Click(object sender, EventArgs e)
+        {
+            var rdialog = new OpenFileDialog()
+            {
+                Title = "Wczytaj plik do szyfrowania",
+                DefaultExt = "csv",
+                Filter = "Pliki csv (*.csv)|*.csv"
+            };
+            var wdialog = new SaveFileDialog()
+            {
+                Title = "Zapisz zaszyfrowany plik",
+                DefaultExt = "csv",
+                Filter = "Pliki csv (*.csv)|*.csv"
+            };
+            if (rdialog.ShowDialog() == DialogResult.OK)
+            {
+                if (wdialog.ShowDialog() == DialogResult.OK)
+                {
+                    Utilities.RSAEncryption.EncryptCsvFile(rdialog.FileName, wdialog.FileName);
                 }
             }
         }

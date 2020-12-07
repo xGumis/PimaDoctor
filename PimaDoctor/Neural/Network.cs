@@ -41,8 +41,8 @@ namespace PimaDoctor.Neural
                 NDarray outcomenew = outcome.ToNumpyNET();
 
                 var model = new Sequential();
-                model.Add(new Dense(8, activation: "tanh", input_dim: 8, kernel_initializer: "uniform"));
-                model.Add(new Dense(12, activation: "tanh", kernel_initializer: "uniform"));
+                model.Add(new Dense(7, activation: "tanh", input_dim: 8, kernel_initializer: "uniform"));
+                model.Add(new Dense(6, activation: "tanh", kernel_initializer: "uniform"));
                 model.Add(new Dense(1, activation: "sigmoid", kernel_initializer: "uniform"));
 
                 model.Compile(optimizer: "adam", loss: "binary_crossentropy", metrics: new string[] { "accuracy" });
@@ -113,7 +113,7 @@ namespace PimaDoctor.Neural
                 }).ToArray();
 
             NDarray testDataNew = testData.ToNumpyNET();
-            var test = _model?.Predict(testDataNew);
+            var test = Utilities.Cache.Model.Predict(testDataNew);
             var value = test?[0][0].ToString();
             return Convert.ToDouble(value, CultureInfo.InvariantCulture);
         }
@@ -121,7 +121,14 @@ namespace PimaDoctor.Neural
         private static List<Diabetes> ReadCsv(string pathToCsv)
         {
             using var reader = new StreamReader(pathToCsv);
-            using var csv = new CsvReader(reader, CultureInfo.InvariantCulture);
+            using var writer = new StringWriter();
+            while (!reader.EndOfStream)
+            {
+                writer.WriteLine(Utilities.RSAEncryption.Decrypt(reader.ReadLine()));
+            }
+            reader.Close();
+            using var csv = new CsvReader(new StringReader(writer.ToString()), CultureInfo.InvariantCulture);
+            writer.Close();
             return csv.GetRecords<Diabetes>().ToList();
         }
     }

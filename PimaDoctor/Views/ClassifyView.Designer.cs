@@ -122,11 +122,8 @@
             // numericUpDownDPF
             // 
             this.numericUpDownDPF.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownDPF.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            196608});
+            this.numericUpDownDPF.Increment = 0.001M;
+            this.numericUpDownDPF.DecimalPlaces = 3;
             this.numericUpDownDPF.Location = new System.Drawing.Point(164, 183);
             this.numericUpDownDPF.Name = "numericUpDownDPF";
             this.numericUpDownDPF.Size = new System.Drawing.Size(64, 20);
@@ -135,11 +132,8 @@
             // numericUpDownBMI
             // 
             this.numericUpDownBMI.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.numericUpDownBMI.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            65536});
+            this.numericUpDownBMI.Increment = 0.01M;
+            this.numericUpDownBMI.DecimalPlaces = 2;
             this.numericUpDownBMI.Location = new System.Drawing.Point(164, 153);
             this.numericUpDownBMI.Name = "numericUpDownBMI";
             this.numericUpDownBMI.Size = new System.Drawing.Size(64, 20);
@@ -152,6 +146,7 @@
             this.numericUpDownInsulin.Name = "numericUpDownInsulin";
             this.numericUpDownInsulin.Size = new System.Drawing.Size(64, 20);
             this.numericUpDownInsulin.TabIndex = 23;
+            this.numericUpDownInsulin.Maximum = 1000;
             // 
             // numericUpDownThickness
             // 
@@ -168,6 +163,7 @@
             this.numericUpDownPressure.Name = "numericUpDownPressure";
             this.numericUpDownPressure.Size = new System.Drawing.Size(64, 20);
             this.numericUpDownPressure.TabIndex = 21;
+            this.numericUpDownPressure.Maximum = 200;
             // 
             // numericUpDownGlucose
             // 
@@ -176,6 +172,7 @@
             this.numericUpDownGlucose.Name = "numericUpDownGlucose";
             this.numericUpDownGlucose.Size = new System.Drawing.Size(64, 20);
             this.numericUpDownGlucose.TabIndex = 20;
+            this.numericUpDownGlucose.Maximum = 1000;
             // 
             // labelResult
             // 

@@ -33,6 +33,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonLoad = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.buttonEncryptCSV = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,16 +64,18 @@
             this.tableLayoutPanel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.buttonEncryptCSV, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.buttonLoad, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.buttonSave, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.buttonTrain, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(157, 159);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 90);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 120);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // buttonLoad
@@ -98,6 +101,18 @@
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // buttonEncryptCSV
+            // 
+            this.buttonEncryptCSV.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonEncryptCSV.Enabled = false;
+            this.buttonEncryptCSV.Location = new System.Drawing.Point(53, 93);
+            this.buttonEncryptCSV.Name = "buttonEncryptCSV";
+            this.buttonEncryptCSV.Size = new System.Drawing.Size(94, 23);
+            this.buttonEncryptCSV.TabIndex = 3;
+            this.buttonEncryptCSV.Text = "Zaszyfruj CSV";
+            this.buttonEncryptCSV.UseVisualStyleBackColor = true;
+            this.buttonEncryptCSV.Click += new System.EventHandler(this.buttonEncryptCSV_Click);
+            // 
             // TrainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,5 +133,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button buttonLoad;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Button buttonEncryptCSV;
     }
 }

@@ -49,5 +49,16 @@ namespace PimaDoctor.Utilities
                 }
             }
         }
+        public static void EncryptCsvFile(string read_path, string write_path)
+        {
+            using var reader = new StreamReader(read_path);
+            using var writer = new StreamWriter(write_path);
+            while (!reader.EndOfStream)
+            {
+                writer.WriteLine(Encrypt(reader.ReadLine()));
+            }
+            reader.Close();
+            writer.Close();
+        }
     }
 }
