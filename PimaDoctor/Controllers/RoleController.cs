@@ -20,7 +20,7 @@ namespace PimaDoctor.Controllers
         {
             DataConnection.DefaultSettings = new MySettings(_test);
 
-            using var db = new DbCinema();
+            using var db = new DbDoctor();
             var query = from role in db.Roles
                 orderby role.Name descending
                 select role;
@@ -32,7 +32,7 @@ namespace PimaDoctor.Controllers
         {
             DataConnection.DefaultSettings = new MySettings(_test);
 
-            using var db = new DbCinema();
+            using var db = new DbDoctor();
             var query = from role in db.Roles
                 where role.Id == id
                 select role;
@@ -44,7 +44,7 @@ namespace PimaDoctor.Controllers
         {
             DataConnection.DefaultSettings = new MySettings(_test);
 
-            using var db = new DbCinema();
+            using var db = new DbDoctor();
             var query = from role in db.Roles
                 where role.Name == name
                 select role;
@@ -56,7 +56,7 @@ namespace PimaDoctor.Controllers
         {
             DataConnection.DefaultSettings = new MySettings(_test);
 
-            using var db = new DbCinema();
+            using var db = new DbDoctor();
             var statement = db.Roles
                 .Value(role => role.Name, name)
                 .Insert();
@@ -66,7 +66,7 @@ namespace PimaDoctor.Controllers
         {
             DataConnection.DefaultSettings = new MySettings(_test);
 
-            using var db = new DbCinema();
+            using var db = new DbDoctor();
             var role = Get(id);
 
             if (name != null)
@@ -81,7 +81,7 @@ namespace PimaDoctor.Controllers
         {
             DataConnection.DefaultSettings = new MySettings(_test);
 
-            using var db = new DbCinema();
+            using var db = new DbDoctor();
             db.Roles
                 .Where(role => role.Id == id)
                 .Delete();

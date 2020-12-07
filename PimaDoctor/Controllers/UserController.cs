@@ -19,7 +19,7 @@ namespace PimaDoctor.Controllers
         {
             DataConnection.DefaultSettings = new MySettings(_test);
             
-            using var db = new DbCinema();
+            using var db = new DbDoctor();
             var query = from user in db.Users
                 orderby user.Login descending
                 select user;
@@ -31,7 +31,7 @@ namespace PimaDoctor.Controllers
         {
             DataConnection.DefaultSettings = new MySettings(_test);
             
-            using var db = new DbCinema();
+            using var db = new DbDoctor();
             var queryable = from user in db.Users
                 where user.Id == id
                 join role in db.Roles on user.RoleId equals role.Id
@@ -45,7 +45,7 @@ namespace PimaDoctor.Controllers
         {
             DataConnection.DefaultSettings = new MySettings(_test);
             
-            using var db = new DbCinema();
+            using var db = new DbDoctor();
             var queryable = from user in db.Users
                             where user.Login == login
                             join role in db.Roles on user.RoleId equals role.Id
@@ -65,7 +65,7 @@ namespace PimaDoctor.Controllers
         {
             DataConnection.DefaultSettings = new MySettings(_test);
             
-            using var db = new DbCinema();
+            using var db = new DbDoctor();
             db.Users
                 .Value(user => user.Login, login)
                 .Value(user => user.Password, RSAEncryption.Encrypt(password))
@@ -77,7 +77,7 @@ namespace PimaDoctor.Controllers
         {
             DataConnection.DefaultSettings = new MySettings(_test);
             
-            using var db = new DbCinema();
+            using var db = new DbDoctor();
             var user = Get(id);
 
             if (password != null)
@@ -97,7 +97,7 @@ namespace PimaDoctor.Controllers
         {
             DataConnection.DefaultSettings = new MySettings(_test);
             
-            using var db = new DbCinema();
+            using var db = new DbDoctor();
             db.Users
                 .Where(user => user.Id == id)
                 .Delete();
@@ -107,7 +107,7 @@ namespace PimaDoctor.Controllers
         {
             DataConnection.DefaultSettings = new MySettings(_test);
             
-            using var db = new DbCinema();
+            using var db = new DbDoctor();
             var user = GetByLogin(login);
 
             if (user != null && password == RSAEncryption.Decrypt(user.Password))
